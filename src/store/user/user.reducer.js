@@ -1,6 +1,6 @@
 // this will be our reducer
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const INITIAL_STATE = {
   currentUser: null,
@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 //  create slice create not only reducer but also action and action types
 // we dont need to make any action type
 export const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: INITIAL_STATE,
   // in reducers here - we define name of the reducer function which update the reducer state
   reducers: {

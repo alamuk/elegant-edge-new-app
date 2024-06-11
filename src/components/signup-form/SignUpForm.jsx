@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
-import FormInput from "../form-input/FormInput";
-import "./SingUpForm.scss";
-import Button from "../button/Button";
+} from '../../utils/firebase/firebase.utils';
+import FormInput from '../form-input/FormInput';
+import './SingUpForm.scss';
+import Button from '../button/Button';
 
 const defaultFormFields = {
-  displayName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
 };
 
 const SignUpForm = () => {
@@ -27,7 +27,7 @@ const SignUpForm = () => {
 
     // confirm password matches
     if (password !== confirmPassword) {
-      alert("your passwords do not match");
+      alert('your passwords do not match');
       return;
     }
 
@@ -44,8 +44,8 @@ const SignUpForm = () => {
 
       resetFormFields();
     } catch (e) {
-      if (e.code === "auth/email-already-in-use") {
-        alert("cannot create user email already in use");
+      if (e.code === 'auth/email-already-in-use') {
+        alert('cannot create user email already in use');
       } else {
         alert(`user creation error ${e}`);
       }

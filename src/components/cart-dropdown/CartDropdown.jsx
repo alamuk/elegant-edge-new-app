@@ -1,21 +1,21 @@
-import Button from "../button/Button";
+import Button from '../button/Button';
 
 import {
   CartDropdownContainer,
   EmptyMessage,
   CartItems,
-} from "./CardDropdown.styles";
-import CartItem from "../cart-item/CartItem";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { selectCartItems } from "../../store/cart/cart.selector";
+} from './CardDropdown.styles';
+import CartItem from '../cart-item/CartItem';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { selectCartItems } from '../../store/cart/cart.selector';
 
 const CartDropdown = () => {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
-    navigate("/checkout");
+    navigate('/checkout');
   };
 
   return (

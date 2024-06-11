@@ -1,6 +1,6 @@
-import SignUpForm from "../../components/signup-form/SignUpForm";
-import SignInForm from "../../components/sign-in-form/SignInForm";
-import "./Authentication.scss";
+import SignUpForm from '../../components/signup-form/SignUpForm';
+import SignInForm from '../../components/sign-in-form/SignInForm';
+import './Authentication.scss';
 // import { useEffect, useState } from "react";
 // import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 

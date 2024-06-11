@@ -1,8 +1,8 @@
-import "./product-card.styles.scss";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
-import { useDispatch } from "react-redux";
+import './product-card.styles.scss';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/Button';
+import { useDispatch } from 'react-redux';
 
-import { addItemToCart } from "../../store/cart/cart.reducer";
+import { addItemToCart } from '../../store/cart/cart.reducer';
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;

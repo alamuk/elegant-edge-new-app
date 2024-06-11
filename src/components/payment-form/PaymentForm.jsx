@@ -1,14 +1,14 @@
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { BUTTON_TYPE_CLASSES } from "../button/Button";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { BUTTON_TYPE_CLASSES } from '../button/Button';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
   PaymentFormContainer,
   FormContainer,
   PaymentButton,
-} from "./PaymentForm.styles";
-import { selectCartTotal } from "../../store/cart/cart.selector";
-import { selectCurrentUser } from "../../store/user/user.selector";
+} from './PaymentForm.styles';
+import { selectCartTotal } from '../../store/cart/cart.selector';
+import { selectCurrentUser } from '../../store/user/user.selector';
 
 const PaymentForm = () => {
   const stripe = useStripe();
@@ -25,10 +25,10 @@ const PaymentForm = () => {
     }
     setIsProcessingPayment(true);
 
-    const response = await fetch("/.netlify/functions/create-payment-intent", {
-      method: "post",
+    const response = await fetch('/.netlify/functions/create-payment-intent', {
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
 
       body: JSON.stringify({ amount: amount * 100 }),
@@ -43,7 +43,7 @@ const PaymentForm = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser.displayName : "Guest",
+          name: currentUser ? currentUser.displayName : 'Guest',
         },
       },
     });
@@ -53,8 +53,8 @@ const PaymentForm = () => {
     if (paymentResult.error) {
       alert(paymentResult.error);
     } else {
-      if (paymentResult.paymentIntent.status === "succeeded") {
-        alert("Payment Successful");
+      if (paymentResult.paymentIntent.status === 'succeeded') {
+        alert('Payment Successful');
       }
     }
   };

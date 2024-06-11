@@ -1,9 +1,9 @@
-import "./category.style.scss";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ProductCard from "../../components/product-card/ProductCard";
-import { useSelector } from "react-redux";
-import { selectCategoriesMap } from "../../store/categories/category.selector";
+import './category.style.scss';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ProductCard from '../../components/product-card/ProductCard';
+import { useSelector } from 'react-redux';
+import { selectCategoriesMap } from '../../store/categories/category.selector';
 
 const Category = () => {
   const { category } = useParams();

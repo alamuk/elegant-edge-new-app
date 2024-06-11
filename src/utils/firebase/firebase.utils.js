@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 
 import {
   createUserWithEmailAndPassword,
@@ -9,7 +9,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-} from "firebase/auth";
+} from 'firebase/auth';
 
 import {
   doc,
@@ -20,15 +20,15 @@ import {
   writeBatch,
   query,
   getDocs,
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDGj1pWbGkhb2EAF7O5jDzyX_GG9vqUuP8",
-  authDomain: "captain-clothing-app.firebaseapp.com",
-  projectId: "captain-clothing-app",
-  storageBucket: "captain-clothing-app.appspot.com",
-  messagingSenderId: "853122574930",
-  appId: "1:853122574930:web:dff1d5a0bc6a7c084d0d8b",
+  apiKey: 'AIzaSyDGj1pWbGkhb2EAF7O5jDzyX_GG9vqUuP8',
+  authDomain: 'captain-clothing-app.firebaseapp.com',
+  projectId: 'captain-clothing-app',
+  storageBucket: 'captain-clothing-app.appspot.com',
+  messagingSenderId: '853122574930',
+  appId: '1:853122574930:web:dff1d5a0bc6a7c084d0d8b',
 };
 
 // Initialize Firebase
@@ -36,7 +36,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
-  prompt: "select_account",
+  prompt: 'select_account',
 });
 
 export const auth = getAuth();
@@ -62,11 +62,11 @@ export const addCollectionAndDocuments = async (
     batch.set(docRef, object);
   });
   await batch.commit();
-  console.log("done");
+  console.log('done');
 };
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, "caregories");
+  const collectionRef = collection(db, 'caregories');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
@@ -116,7 +116,7 @@ items: [
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {
-    displayName: "",
+    displayName: '',
   },
 ) => {
   if (!userAuth) return;
@@ -124,7 +124,7 @@ export const createUserDocumentFromAuth = async (
   // If we don't have that in the database then Google will generate it for us.
   // db = database, users = collection, userAuth.id = unique ID
   // The data comes as a response from the Google authentication has all these data.
-  const userDocRef = doc(db, "users", userAuth.uid);
+  const userDocRef = doc(db, 'users', userAuth.uid);
 
   // We get a snapshot from the user document reference.
   // Snapshot is a specific Object that has the data.
@@ -148,7 +148,7 @@ export const createUserDocumentFromAuth = async (
         ...additionalInformation,
       });
     } catch (error) {
-      console.log("There was an error creating the user", error.message);
+      console.log('There was an error creating the user', error.message);
     }
   }
 

@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
-} from "../../utils/firebase/firebase.utils";
-import FormInput from "../form-input/FormInput";
-import "./SingInForm.scss";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
+} from '../../utils/firebase/firebase.utils';
+import FormInput from '../form-input/FormInput';
+import './SingInForm.scss';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/Button';
 
 const defaultFormFields = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const SignInForm = () => {
@@ -38,11 +38,11 @@ const SignInForm = () => {
       resetFormFields();
     } catch (e) {
       switch (e.code) {
-        case "auth/wrong-password":
-          alert("incorrect password for email");
+        case 'auth/wrong-password':
+          alert('incorrect password for email');
           break;
-        case "auth/user-not-found":
-          alert("no user associated with this email");
+        case 'auth/user-not-found':
+          alert('no user associated with this email');
           break;
         default:
           console.log(e);

@@ -1,12 +1,11 @@
-import "./checkout.styles.scss";
-import CheckoutItem from "../../components/checkout-item/CheckoutItem";
-import { useSelector } from "react-redux";
+import './checkout.styles.scss';
+import CheckoutItem from '../../components/checkout-item/CheckoutItem';
+import { useSelector } from 'react-redux';
 import {
   selectCartItems,
   selectCartTotal,
-} from "../../store/cart/cart.selector";
-import PaymentForm from "../../components/payment-form/PaymentForm";
-import { Suspense } from "react";
+} from '../../store/cart/cart.selector';
+import PaymentForm from '../../components/payment-form/PaymentForm';
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);

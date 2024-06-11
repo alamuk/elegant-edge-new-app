@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-import logger from "redux-logger";
-import { rootReducer } from "./root-reducer";
+import { configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import { rootReducer } from './root-reducer';
 
 // /////////
 // import { persistStore, persistReducer } from "redux-persist";
@@ -18,7 +18,7 @@ import { rootReducer } from "./root-reducer";
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
 //
 // // the logger will be used here only when we are in development not in production.
-const middlewares = [process.env.NODE_ENV !== "production" && logger].filter(
+const middlewares = [process.env.NODE_ENV !== 'production' && logger].filter(
   Boolean,
 );
 //
